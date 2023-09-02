@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/personalizados.css">
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/766c25c2d0.js" crossorigin="anonymous"></script>
+</head>
+<body class="font-rubik text-lg bg-Verydarkblue">
+
+  <main class="h-[100vh] relative box-border grid place-items-center">
+    <!-- COTENEDOR PADRE -->
+    <div class="w-[90%] max-w-[1200px] mx-auto my-20 h-[100%] md:h-[85%] md:my-0 grid items-center">
+      <!-- CONTENEDOR -->
+      <div class="grid gap-6 md:grid-cols-[220px,1fr]">
+        <!-- CONTENDOR USER -->
+        <div class="bg-Darkblue rounded-xl h-[100%]">
+          <!-- CONTENT USER -->
+          <div class="bg-Blue p-6 rounded-xl flex items-center gap-4 md:flex-col md:items-start md:h-[60%]">
+            <img src="../images/image-jeremy.png" alt="" class="w-[75px] boder-solid border-4 border-white rounded-full">
+            <div class="">
+              <p class="text-base text-PaleBlue">Report for</p>
+              <h1 class="text-2xl text-white font-light md:text-3xl">Jeremy Robson</h1>
+            </div>
+            <!-- <div class="bg-white rounded-lg md:w-[65px]">
+              <button class="switch flex gap-1 w-full justify-center">
+                <i class="fa-solid fa-sun bg-black text-white w-full rounded-lg"></i>
+                <i class="fa-solid fa-moon w-full"></i>
+              </button>
+            </div> -->
+          </div>
+          <!-- CONTENT LIST -->
+          <div class="rounded-xl p-6 flex justify-between text-PaleBlue md:flex-col md:gap-4">
+            <a href="" class="linkTime text-white" id="daily">Daily</a>
+            <a href="" class="linkTime hover:text-white duration-300 ease-in-out" id="weekly">Weekly</a>
+            <a href="" class="linkTime hover:text-white duration-300 ease-in-out" id="monthly">Monthly</a>
+          </div>
+        </div>
+        <!-- CONTENDOR TIME-->
+        <div class="grid gap-6">
+          <!-- CONTENDOR TIME ONE -->
+          <div class="grid gap-6 md:grid-cols-3">
+            <!-- CARD WORD -->
+            <div class="content__work rounded-xl grid place-items-end">
+              <div class="bg-Darkblue w-full h-[70%] md:h-[75%] rounded-xl p-6 grid md:gap-2 items-center" id="workDataContainer">
+              </div>
+            </div>
+            <!-- CARD PLAY -->
+            <div class="content__play rounded-xl grid place-items-end gap-6">
+              <div class="bg-Darkblue w-full h-[70%] md:h-[75%] rounded-xl p-6 grid md:gap-2 items-center" id="playDataContainer">
+              </div>
+            </div>
+            <!-- CARD STUDY -->
+            <div class="content__study rounded-xl grid place-items-end gap-6">
+              <div class="bg-Darkblue w-full h-[70%] md:h-[75%] rounded-xl p-6 grid md:gap-2 items-center" id="studyDataContainer">
+              </div>
+            </div>
+            
+          </div>
+          <!-- CONTENDOR TIME TWO -->
+          <div class="grid gap-6 md:grid-cols-3">
+            <!-- CARD EXCERCISE -->
+            <div class="content__exercise rounded-xl grid place-items-end gap-6">
+              <div class="bg-Darkblue w-full h-[70%] md:h-[75%] rounded-xl p-6 grid md:gap-2 items-center" id="exerciseDataContainer">
+              </div>
+            </div>
+            <!-- CARD SOCIAL -->
+            <div class="content__social rounded-xl grid place-items-end">
+              <div class="bg-Darkblue w-full h-[70%] md:h-[75%] rounded-xl p-6 grid md:gap-2 items-center" id="socialDataContainer">
+              </div>
+            </div>
+            <!-- CARD Self Care -->
+            <div class="content__self rounded-xl grid place-items-end">
+              <div class="bg-Darkblue w-full h-[70%] md:h-[75%] rounded-xl p-6 grid md:gap-2 items-center" id="selfDataContainer">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>

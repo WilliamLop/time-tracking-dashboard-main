@@ -1,0 +1,67 @@
+:root{
+    --Lightred: hsl(15, 100%, 70%);
+    --Softblue: hsl(195, 74%, 62%);
+    --Lightred2: hsl(348, 100%, 68%);
+    --Limegreen: hsl(145, 58%, 55%);
+    --Violet: hsl(264, 64%, 52%);
+    --Softorange: hsl(43, 84%, 65%);
+
+
+    --Verydarkblue: hsl(226, 43%, 10%);
+    --Darkblue: hsl(235, 46%, 20%);
+    --Desaturatedblue: hsl(235, 45%, 61%);
+    --PaleBlue: hsl(236, 100%, 87%);
+
+}
+
+
+.content__work{
+    background: url(../../images/icon-work.svg) no-repeat;
+    background-position: calc(100% - 15px) top;
+    background-color: var(--Lightred);
+    height: 190px;
+}
+.content__play{
+    background: url(../../images/icon-play.svg) no-repeat;
+    background-position: calc(100% - 15px) top;
+    background-color: var(--Softblue);
+    height: 190px;
+}
+.content__study{
+    background: url(../../images/icon-study.svg) no-repeat;
+    background-position: calc(100% - 15px) top;
+    background-color: var(--Lightred2);
+    height: 190px;
+}
+.content__exercise{
+    background: url(../../images/icon-exercise.svg) no-repeat;
+    background-position: calc(100% - 15px) top;
+    background-color: var(--Limegreen);
+    height: 190px;
+}
+.content__social{
+    background: url(../../images/icon-social.svg) no-repeat;
+    background-position: calc(100% - 15px) top;
+    background-color: var(--Violet);
+    height: 190px;
+}
+.content__self{
+    background: url(../../images/icon-self-care.svg) no-repeat;
+    background-position: calc(100% - 15px) top;
+    background-color: var(--Softorange);
+    height: 190px;
+}
+
+/* media */
+@media (min-width: 768px){
+    .content__work,
+    .content__play,
+    .content__study,
+    .content__exercise,
+    .content__social,
+    .content__self
+    {
+        height: 210px;
+    }
+    
+}
