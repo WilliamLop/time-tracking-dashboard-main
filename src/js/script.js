@@ -97,12 +97,12 @@ fetch("js/data.json")
 function mostrarDatos(datos, categoria, container) {
     container.innerHTML = `
         <div class="flex justify-between items-center">
-            <h3 class="text-white font-medium">${categoria}</h3>
+            <h3 class="text-white font-medium md:text-sm lg:text-lg">${categoria}</h3>
             <img src="../images/icon-ellipsis.svg" alt="">
-            </div>
-            <div class="flex justify-between items-center md:items-start md:flex-col md:gap-1">
-            <p class="text-4xl font-light text-white">${datos.current}hrs</p>
-            <p class="text-PaleBlue">Last Week - <span>${datos.previous}hrs</span></p>
+        </div>
+        <div class="flex justify-between items-center md:items-start md:flex-col md:gap-1">
+            <p class="text-4xl font-light text-white xl:text-5xl">${datos.current}hrs</p>
+            <p class="text-PaleBlue md:text-base lg:text-lg">Last Week - <span>${datos.previous}hrs</span></p>
         </div>
     `;
 }

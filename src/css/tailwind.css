@@ -622,6 +622,22 @@ video {
   max-width: 1200px;
 }
 
+.max-w-\[1100px\] {
+  max-width: 1100px;
+}
+
+.max-w-\[1000px\] {
+  max-width: 1000px;
+}
+
+.max-w-\[1050px\] {
+  max-width: 1050px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .place-items-end {
   place-items: end;
 }
@@ -750,8 +766,34 @@ video {
   transition-duration: 300ms;
 }
 
+.duration-500 {
+  transition-duration: 500ms;
+}
+
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover\:bg-Desaturatedblue:hover {
+  --tw-bg-opacity: 1;
+  background-color: hsl(235 45% 61% / var(--tw-bg-opacity));
+}
+
+.hover\:bg-Darkblue:hover {
+  --tw-bg-opacity: 1;
+  background-color: hsl(235 46% 20% / var(--tw-bg-opacity));
+}
+
+.hover\:bg-Desaturatedblue\/60:hover {
+  background-color: hsl(235 45% 61% / 0.6);
+}
+
+.hover\:bg-Desaturatedblue\/90:hover {
+  background-color: hsl(235 45% 61% / 0.9);
+}
+
+.hover\:bg-Desaturatedblue\/95:hover {
+  background-color: hsl(235 45% 61% / 0.95);
 }
 
 .hover\:text-white:hover {
@@ -777,6 +819,18 @@ video {
     height: 85%;
   }
 
+  .md\:h-\[65\%\] {
+    height: 65%;
+  }
+
+  .md\:h-\[63\] {
+    height: 63;
+  }
+
+  .md\:h-\[63\%\] {
+    height: 63%;
+  }
+
   .md\:w-\[65px\] {
     width: 65px;
   }
@@ -787,6 +841,14 @@ video {
 
   .md\:grid-cols-\[220px\2c 1fr\] {
     grid-template-columns: 220px 1fr;
+  }
+
+  .md\:grid-cols-\[200px\2c 1fr\] {
+    grid-template-columns: 200px 1fr;
+  }
+
+  .md\:grid-cols-\[150px\2c 1fr\] {
+    grid-template-columns: 150px 1fr;
   }
 
   .md\:flex-col {
@@ -809,8 +871,64 @@ video {
     gap: 1rem;
   }
 
+  .md\:gap-3 {
+    gap: 0.75rem;
+  }
+
+  .md\:gap-6 {
+    gap: 1.5rem;
+  }
+
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+
+  .md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .md\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-\[200px\2c 1fr\] {
+    grid-template-columns: 200px 1fr;
+  }
+
+  .lg\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .lg\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .lg\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .lg\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .xl\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 }
