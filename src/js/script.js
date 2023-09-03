@@ -8,7 +8,6 @@ const socialDataContainer = document.getElementById('socialDataContainer');
 const selfDataContainer = document.getElementById('selfDataContainer');
 
 
-
 // Función para eliminar la clase activa de todos los elementos de navegación
 const removeActiveElements2 = (selector) => {
     const linksActive = document.querySelectorAll(`a.${selector}`); // Añadir "a." para seleccionar solo enlaces
@@ -41,8 +40,8 @@ fetch("js/data.json")
                 event.preventDefault(); // Evita la recarga de la página al hacer clic en el enlace
 
 
-                removeActiveElements2('text-white');
-                link.classList.add('text-white');
+                removeActiveElements2('text-Blue');
+                link.classList.add('text-Blue');
 
                 // Establecer el enlace activo
                 activeLink = link;
@@ -74,17 +73,17 @@ fetch("js/data.json")
             });
             // Manejar el evento mouseover solo si no se ha hecho clic en el enlace
             link.addEventListener('mouseover', (e) => {
-                if (!link.classList.contains('text-white')) {
-                    removeActiveElements2('text-white');
-                    link.classList.add('text-white');
+                if (!link.classList.contains('text-Blue')) {
+                    removeActiveElements2('text-Blue');
+                    link.classList.add('text-Blue');
                 }
             });
 
             // Manejar el evento mouseout para restablecer el enlace activo
             link.addEventListener('mouseout', () => {
                 if (activeLink !== null) {
-                    removeActiveElements2('text-white');
-                    activeLink.classList.add('text-white');
+                    removeActiveElements2('text-Blue');
+                    activeLink.classList.add('text-Blue');
                 }
             });
         });
@@ -97,12 +96,12 @@ fetch("js/data.json")
 function mostrarDatos(datos, categoria, container) {
     container.innerHTML = `
         <div class="flex justify-between items-center">
-            <h3 class="text-white font-medium md:text-sm lg:text-lg">${categoria}</h3>
+            <h3 class="text-white font-medium md:text-sm lg:text-lg dark:text-Darkblue">${categoria}</h3>
             <img src="../images/icon-ellipsis.svg" alt="">
         </div>
         <div class="flex justify-between items-center md:items-start md:flex-col md:gap-1">
-            <p class="text-4xl font-light text-white xl:text-5xl">${datos.current}hrs</p>
-            <p class="text-PaleBlue md:text-base lg:text-lg">Last Week - <span>${datos.previous}hrs</span></p>
+            <p class="text-4xl font-light text-white xl:text-5xl dark:text-Darkblue">${datos.current}hrs</p>
+            <p class="text-PaleBlue md:text-base lg:text-lg dark:text-Darkblue/75">Last Week - <span>${datos.previous}hrs</span></p>
         </div>
     `;
 }
@@ -110,5 +109,56 @@ function mostrarDatos(datos, categoria, container) {
 
 // DARK MODE
 
-const darkMode = document.querySelector('.switch');
+const toggleDark = document.getElementById('toggleDark');
 
+// Toma un elemento y una cadena separada por espacions  y divide la cadena en clases individuales
+// Luego utiliza classList.toggle(), en cada una ade ellas, de esta manera es posible cambiar multiplies clases en una cola línea de código
+function toggleClasses(element, classes) {
+    classes.split(' ').forEach(className => element.classList.toggle(className));
+}
+
+// Agrego un evento para cambiar el tema y guardarlo en el localStorage
+toggleDark.addEventListener('click', function() {
+
+    if(document.documentElement.classList.contains('dark')){
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'dark');
+        toggleClasses(toggleDark.querySelector('i:nth-child(1)'), 'bg-Darkblue text-white');
+        toggleClasses(toggleDark.querySelector('i:nth-child(2)'), 'bg-Darkblue text-white');
+        localStorage.setItem('button1Class', toggleDark.querySelector('i:nth-child(1)').className);
+        localStorage.setItem('button2Class', toggleDark.querySelector('i:nth-child(2)').className);
+    }else{
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'light');
+        toggleClasses(toggleDark.querySelector('i:nth-child(1)'), 'bg-Darkblue text-white');
+        toggleClasses(toggleDark.querySelector('i:nth-child(2)'), 'bg-Darkblue text-white');
+        localStorage.setItem('button1Class', toggleDark.querySelector('i:nth-child(1)').className);
+        localStorage.setItem('button2Class', toggleDark.querySelector('i:nth-child(2)').className);
+    }
+
+    
+});
+
+
+// Recupero el tema duardado en el localStorage y lo aplico al cargar la página
+// Recupero el tema guardado en el localStorage y lo aplico al cargar la página
+function applySavedTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const savedButton1Class = localStorage.getItem('button1Class');
+    const savedButton2Class = localStorage.getItem('button2Class');
+
+    if (savedTheme === 'dark') {
+        document.documentElement.classList.remove('dark');
+    } else if (savedTheme === 'light') {
+        document.documentElement.classList.add('dark');
+    }
+
+    if (savedButton1Class) {
+        toggleDark.querySelector('i:nth-child(1)').className = savedButton1Class;
+    }
+    if (savedButton2Class) {
+        toggleDark.querySelector('i:nth-child(2)').className = savedButton2Class;
+    }
+}
+
+applySavedTheme();
